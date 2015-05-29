@@ -87,7 +87,7 @@ print_end_message() {
 # from any locations; symink handled
 declare -r SOURCE_DIR=$(source_dir)
 
-declare -r CMD="${0%/*}"
+declare -r CMD="${0##*/}"
 
 declare -r TIMESTAMP=$(date +"%Y%m%dT%H%M%S")
 
