@@ -62,6 +62,12 @@ source_dir()
   echo $(cd -P "${source_dir}" && pwd)
 }
 
+home_dir()
+{
+  local home_dir=${HOME%/*}
+  echo "${home_dir}"
+}
+
 validate_args() {
   if [[ $# -ne 1 ]]; then
     usage
@@ -90,6 +96,8 @@ declare -r SOURCE_DIR=$(source_dir)
 declare -r CMD="${0##*/}"
 
 declare -r TIMESTAMP=$(date +"%Y%m%dT%H%M%S")
+
+declare -r HOME_DIR=$(home_dir)
 
 ############################################################################
 # Functions
